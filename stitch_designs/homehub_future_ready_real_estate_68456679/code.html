@@ -1,0 +1,770 @@
+<!DOCTYPE html><html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>HomeHub | Premier Real Estate Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css2-68a53b995564.png" rel="stylesheet">
+<link href="assets/css2-26cd08d450d9.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error": "#ffb4ab",
+                "on-background": "#e0e3e5",
+                "on-error": "#690005",
+                "secondary-fixed": "#62fae3",
+                "inverse-on-surface": "#2d3133",
+                "surface": "#101415",
+                "on-secondary-fixed-variant": "#005047",
+                "surface-bright": "#363a3b",
+                "on-tertiary": "#003919",
+                "secondary-fixed-dim": "#3cddc7",
+                "surface-variant": "#323537",
+                "tertiary-fixed": "#6dfe9c",
+                "on-secondary": "#003731",
+                "inverse-primary": "#565e74",
+                "on-primary": "#283044",
+                "on-tertiary-fixed": "#00210c",
+                "primary-fixed": "#dae2fd",
+                "error-container": "#93000a",
+                "secondary": "#44e2cd",
+                "background": "#101415",
+                "tertiary-container": "#001d0a",
+                "surface-tint": "#bec6e0",
+                "surface-container-highest": "#323537",
+                "tertiary-fixed-dim": "#4de082",
+                "on-tertiary-fixed-variant": "#005227",
+                "on-surface-variant": "#c6c6cd",
+                "outline": "#909097",
+                "surface-container-high": "#272a2c",
+                "secondary-container": "#03c6b2",
+                "surface-container-lowest": "#0b0f10",
+                "on-primary-fixed-variant": "#3f465c",
+                "inverse-surface": "#e0e3e5",
+                "surface-dim": "#101415",
+                "on-tertiary-container": "#00954b",
+                "on-secondary-fixed": "#00201c",
+                "on-secondary-container": "#004d44",
+                "primary": "#bec6e0",
+                "on-primary-container": "#798098",
+                "tertiary": "#4de082",
+                "surface-container": "#1d2022",
+                "primary-fixed-dim": "#bec6e0",
+                "outline-variant": "#45464d",
+                "on-surface": "#e0e3e5",
+                "surface-container-low": "#191c1e",
+                "on-primary-fixed": "#131b2e",
+                "on-error-container": "#ffdad6",
+                "primary-container": "#0f172a"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1440px",
+                "margin-desktop": "64px",
+                "margin-mobile": "24px",
+                "section-gap": "128px",
+                "gutter": "32px",
+                "unit": "8px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "display-sm": [
+                        "Playfair Display"
+                ],
+                "body-xl": [
+                        "Montserrat"
+                ],
+                "label-caps": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600",
+                                "letterSpacing": "0.05em"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "38px",
+                                "fontWeight": "600",
+                                "letterSpacing": "0.05em"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "100px",
+                        {
+                                "lineHeight": "110px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-sm": [
+                        "64px",
+                        {
+                                "lineHeight": "72px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-xl": [
+                        "20px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "700"
+                        }
+                ]
+        },
+        "animation": {
+            "fade-in-up": "fadeInUp 1s ease-out forwards",
+        },
+        "keyframes": {
+            fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+            }
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(16, 20, 21, 0.3);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(25, 255, 223, 0.2);
+        }
+        .bento-card-hover {
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .bento-card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px -20px rgba(25, 255, 223, 0.3);
+            border-color: rgba(25, 255, 223, 0.4);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(25, 255, 223, 0.4);
+        }
+        .cinematic-heading {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        #shader-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .section-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Subtle overlay to ensure readability */
+        .content-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(16, 20, 21, 0.7);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-transparent text-on-background font-body-md overflow-x-hidden min-h-screen">
+<!-- WebGL Background -->
+<canvas id="shader-bg"></canvas>
+<div class="content-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-gutter">
+<span class="font-display-sm text-display-sm font-bold text-white tracking-widest uppercase cinematic-heading" style="font-size: 32px; letter-spacing: 0.1em;">HomeHub</span>
+<div class="hidden md:flex gap-gutter ml-8">
+<a class="text-secondary font-bold border-b border-secondary pb-1 font-body-md text-sm uppercase tracking-widest transition-colors duration-200" href="#">Buy</a>
+<a class="text-on-surface-variant font-body-md text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200" href="#">Rent</a>
+<a class="text-on-surface-variant font-body-md text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200" href="#">Sell</a>
+<a class="text-on-surface-variant font-body-md text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200" href="#">Land</a>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<button class="hidden lg:flex items-center gap-2 px-6 py-2 glass-panel border border-secondary/30 text-secondary rounded-full font-label-caps active:scale-95 transition-all hover:bg-secondary/10 hover:shadow-[0_0_20px_rgba(25,255,223,0.3)]">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                    LIST
+                </button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative h-[95vh] min-h-[800px] flex items-center justify-center overflow-hidden">
+<!-- Three.js Core Container -->
+<div class="absolute inset-0 z-0 opacity-80 mix-blend-screen" id="three-container"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop text-center">
+<h1 class="font-display-lg text-display-lg mb-gutter cinematic-heading drop-shadow-2xl animate-fade-in-up">Discover Your Sanctuary</h1>
+<p class="font-body-xl text-body-xl text-primary mb-section-gap max-w-3xl mx-auto opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Premium real estate services tailored for the discerning buyer. Find the perfect home with our precision-driven market expertise.
+                </p>
+<!-- Central Search Bar -->
+<div class="glass-panel p-2 rounded-2xl max-w-5xl mx-auto flex flex-col md:flex-row gap-2 items-stretch neon-glow relative opacity-0 translate-y-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+<div class="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-tertiary/20 rounded-2xl blur-xl -z-10"></div>
+<div class="flex-1 flex border-b md:border-b-0 md:border-r border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+<div class="flex items-center px-6 text-secondary">
+<span class="material-symbols-outlined">my_location</span>
+</div>
+<input class="w-full border-none focus:ring-0 bg-transparent py-5 font-body-md text-white placeholder:text-on-surface-variant/70 tracking-wide" placeholder="Location, Neighborhood, or Zip" type="text">
+</div>
+<div class="flex-1 flex border-b md:border-b-0 md:border-r border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+<div class="flex items-center px-6 text-secondary">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<select class="w-full border-none focus:ring-0 bg-transparent py-5 font-body-md text-on-surface-variant tracking-wide appearance-none cursor-pointer">
+<option class="bg-surface text-on-surface">Property Type</option>
+<option class="bg-surface text-on-surface">Villa</option>
+<option class="bg-surface text-on-surface">Penthouse</option>
+<option class="bg-surface text-on-surface">Modern Estate</option>
+</select>
+</div>
+<button class="bg-secondary/20 border border-secondary/50 text-secondary px-12 py-5 rounded-xl font-label-caps tracking-widest hover:bg-secondary hover:text-surface active:scale-95 transition-all shadow-[0_0_20px_rgba(25,255,223,0.2)]">
+                        INITIALIZE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-section-gap relative section-reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="glass-panel p-10 rounded-[2rem] border border-white/10 hover:border-secondary/30 transition-colors">
+<h3 class="font-display-sm text-display-sm text-secondary mb-4 cinematic-heading" style="background: linear-gradient(180deg, #62fae3 0%, rgba(98, 250, 227, 0.4) 100%); -webkit-background-clip: text;">10k+</h3>
+<p class="font-label-caps text-on-surface-variant tracking-[0.3em]">Properties Sold</p>
+</div>
+<div class="glass-panel p-10 rounded-[2rem] border border-white/10 hover:border-secondary/30 transition-colors">
+<h3 class="font-display-sm text-display-sm text-secondary mb-4 cinematic-heading" style="background: linear-gradient(180deg, #62fae3 0%, rgba(98, 250, 227, 0.4) 100%); -webkit-background-clip: text;">$4.2B</h3>
+<p class="font-label-caps text-on-surface-variant tracking-[0.3em]">Transaction Vol</p>
+</div>
+<div class="glass-panel p-10 rounded-[2rem] border border-white/10 hover:border-secondary/30 transition-colors">
+<h3 class="font-display-sm text-display-sm text-secondary mb-4 cinematic-heading" style="background: linear-gradient(180deg, #62fae3 0%, rgba(98, 250, 227, 0.4) 100%); -webkit-background-clip: text;">240</h3>
+<p class="font-label-caps text-on-surface-variant tracking-[0.3em]">Expert Agents</p>
+</div>
+<div class="glass-panel p-10 rounded-[2rem] border border-white/10 hover:border-secondary/30 transition-colors">
+<h3 class="font-display-sm text-display-sm text-secondary mb-4 cinematic-heading" style="background: linear-gradient(180deg, #62fae3 0%, rgba(98, 250, 227, 0.4) 100%); -webkit-background-clip: text;">15</h3>
+<p class="font-label-caps text-on-surface-variant tracking-[0.3em]">Global Offices</p>
+</div>
+</div>
+</section>
+<!-- Featured Listings Section -->
+<section class="py-section-gap relative section-reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-margin-desktop">
+<div>
+<span class="text-secondary font-label-caps mb-unit block tracking-[0.4em] glow-text">EXCLUSIVES</span>
+<h2 class="font-display-sm text-display-sm text-white cinematic-heading">Featured Properties</h2>
+</div>
+<a class="text-secondary font-label-caps flex items-center gap-unit hover:gap-gutter transition-all tracking-widest border-b border-secondary/30 pb-1" href="#">
+                        VIEW ALL <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Property Card 1 -->
+<div class="glass-panel rounded-[2rem] overflow-hidden bento-card-hover group border border-white/10">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" data-alt="A ultra-luxury minimalist mansion in Los Angeles at golden hour. The exterior features seamless floor-to-ceiling glass, white limestone walls, and a large cantilevered roof. A sleek black sports car is parked in the driveway. The image has a warm, high-contrast aesthetic, emphasizing wealth and modern elegance in a high-key lighting scenario." src="assets/AB6AXuAU4repQ4O1N1iZdx1X9qtNVcnLRm3gB2Udw5Vjjuva3AkFsJzcYoydrRdhj5Vr5IUwUpHVx0YhjemfSsVemq-9_1bciLKU-6f54a8eb5a25.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute top-6 left-6 bg-secondary/10 border border-secondary/30 backdrop-blur-md text-secondary font-label-caps px-4 py-2 rounded-full tracking-widest text-[10px]">NEW LISTING</div>
+<button class="absolute top-6 right-6 bg-background/40 backdrop-blur-xl p-3 rounded-full text-white/70 border border-white/10 hover:bg-secondary/20 hover:text-secondary hover:border-secondary/50 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-8 relative z-10">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text tracking-wider">$8,450,000</p>
+<p class="text-on-surface-variant font-body-md mb-8 tracking-wide">1240 Bel Air Crest Rd, Los Angeles</p>
+<div class="flex gap-6 border-t border-white/10 pt-6">
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bed</span>
+<span class="font-label-caps tracking-widest text-[10px]">6 BEDS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bathtub</span>
+<span class="font-label-caps tracking-widest text-[10px]">8 BATHS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">square_foot</span>
+<span class="font-label-caps tracking-widest text-[10px]">12K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="glass-panel rounded-[2rem] overflow-hidden bento-card-hover group border border-white/10">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" data-alt="A modern coastal estate overlooking the Mediterranean Sea. The house is built with organic materials like pale stone and light wood, featuring wide verandas and an outdoor lounge. The bright midday sun creates sharp shadows and highlights the turquoise water in the background. The mood is vacation-like, serene, and bright, following a white and emerald color palette." src="assets/AB6AXuCaiwkSA9Rm33WQmr1IjabOOlw2m_La2uZtVRlxXNG-ra92VkUqTYwU7APpJYv3B4I_rLjmhQAceRpcI7zoqt2zhdd18YdF-84369b413283.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute top-6 left-6 bg-primary/10 border border-primary/30 backdrop-blur-md text-primary font-label-caps px-4 py-2 rounded-full tracking-widest text-[10px]">PRICE REDUCED</div>
+<button class="absolute top-6 right-6 bg-background/40 backdrop-blur-xl p-3 rounded-full text-white/70 border border-white/10 hover:bg-secondary/20 hover:text-secondary hover:border-secondary/50 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-8 relative z-10">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text tracking-wider">$4,120,000</p>
+<p class="text-on-surface-variant font-body-md mb-8 tracking-wide">722 Ocean View Dr, Miami Beach</p>
+<div class="flex gap-6 border-t border-white/10 pt-6">
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bed</span>
+<span class="font-label-caps tracking-widest text-[10px]">4 BEDS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bathtub</span>
+<span class="font-label-caps tracking-widest text-[10px]">5 BATHS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">square_foot</span>
+<span class="font-label-caps tracking-widest text-[10px]">5.4K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="glass-panel rounded-[2rem] overflow-hidden bento-card-hover group border border-white/10">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100" data-alt="A stunning A-frame glass cabin nestled in a dense emerald forest. The architecture is futuristic yet rustic, with dark metal framing and warm wooden interiors visible through the glass. Soft morning mist filters through the trees, creating a moody, atmospheric, and highly private visual. The color palette centers on deep greens, blacks, and natural wood tones, emphasizing a luxury retreat feel." src="assets/AB6AXuDijB93hMnyAtlZ-1DjFoqct5jrp_FPlz2giErcOZLwjUizfKIB_KYyV-X7mShFhxXXyzvXsSWLfz9_NTm__M1p0vGOrnR1-519910d1147b.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute top-6 left-6 bg-tertiary/10 border border-tertiary/30 backdrop-blur-md text-tertiary font-label-caps px-4 py-2 rounded-full tracking-widest text-[10px]">TRENDING</div>
+<button class="absolute top-6 right-6 bg-background/40 backdrop-blur-xl p-3 rounded-full text-white/70 border border-white/10 hover:bg-secondary/20 hover:text-secondary hover:border-secondary/50 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-8 relative z-10">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text tracking-wider">$2,800,000</p>
+<p class="text-on-surface-variant font-body-md mb-8 tracking-wide">Wildwood Estate, Aspen Ridge</p>
+<div class="flex gap-6 border-t border-white/10 pt-6">
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bed</span>
+<span class="font-label-caps tracking-widest text-[10px]">3 BEDS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">bathtub</span>
+<span class="font-label-caps tracking-widest text-[10px]">3 BATHS</span>
+</div>
+<div class="flex items-center gap-2 text-white/80">
+<span class="material-symbols-outlined text-secondary/70">square_foot</span>
+<span class="font-label-caps tracking-widest text-[10px]">3.1K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Section -->
+<section class="py-section-gap relative overflow-hidden section-reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+<div>
+<span class="text-secondary font-label-caps tracking-[0.4em] mb-unit block glow-text">INTELLIGENCE</span>
+<h2 class="font-display-sm text-display-sm text-white mb-margin-desktop cinematic-heading">Why Choose HomeHub for Your Journey</h2>
+<p class="font-body-xl text-body-xl text-on-surface-variant mb-margin-desktop leading-relaxed">
+                            We combine deep market intuition with cutting-edge data analytics to provide a real estate experience that is as precise as it is personal.
+                        </p>
+<div class="space-y-6">
+<div class="flex gap-6 glass-panel p-8 rounded-[2rem] border border-white/10 hover:border-secondary/40 hover:bg-white/5 transition-all group">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20 group-hover:shadow-[0_0_20px_rgba(25,255,223,0.3)] transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">memory</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-white mb-2 tracking-wide">Vetted Listings</h4>
+<p class="text-on-surface-variant font-body-md">Every property is physically inspected and documentation verified by our compliance team.</p>
+</div>
+</div>
+<div class="flex gap-6 glass-panel p-8 rounded-[2rem] border border-white/10 hover:border-secondary/40 hover:bg-white/5 transition-all group">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20 group-hover:shadow-[0_0_20px_rgba(25,255,223,0.3)] transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_graph</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-white mb-2 tracking-wide">Predictive Pricing</h4>
+<p class="text-on-surface-variant font-body-md">Our AI models predict neighborhood value appreciation with 94% historical accuracy.</p>
+</div>
+</div>
+<div class="flex gap-6 glass-panel p-8 rounded-[2rem] border border-white/10 hover:border-secondary/40 hover:bg-white/5 transition-all group">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20 group-hover:shadow-[0_0_20px_rgba(25,255,223,0.3)] transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl">diamond</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-white mb-2 tracking-wide">Elite Brokerage</h4>
+<p class="text-on-surface-variant font-body-md">Connect with top 1% agents specialized in luxury estates and investment portfolios.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-full min-h-[600px] rounded-[3rem] overflow-hidden glass-panel border border-white/10 p-4 neon-glow">
+<img class="w-full h-full object-cover rounded-[2.5rem] opacity-70 mix-blend-luminosity" data-alt="A professional, diverse team of real estate agents in a high-end corporate office setting. They are looking at a large digital screen displaying data-rich maps and property analytics. The office is bright and airy with floor-to-ceiling windows showing a modern city skyline. The visual style is corporate modern, clean, and trustworthy, with a focus on emerald and navy accents." src="assets/AB6AXuBgV5aBVwaw34LXTdKVrVuTpTdV-8CjkRvbXoNDnbbgC9XzNSiYrxEArQsOgkdU_6uWPsUXhXf6QgPEXxcWAXx8oLp_-yAo-f40cd4ec4ccd.png">
+<div class="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-secondary/10 rounded-[2.5rem] mix-blend-overlay"></div>
+<div class="absolute bottom-10 right-10 glass-panel p-6 rounded-3xl border border-secondary/30 backdrop-blur-2xl">
+<div class="flex items-center gap-6">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border border-secondary/50 bg-slate-800 mix-blend-screen"></div>
+<div class="w-12 h-12 rounded-full border border-secondary/50 bg-slate-700 mix-blend-screen"></div>
+<div class="w-12 h-12 rounded-full border border-secondary/50 bg-slate-600 mix-blend-screen"></div>
+</div>
+<span class="font-label-caps text-secondary tracking-widest text-[10px]">TRUSTED BY 50K+ FAMILIES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-section-gap relative overflow-hidden section-reveal">
+<div class="max-w-5xl mx-auto px-margin-desktop text-center relative z-10 glass-panel p-20 rounded-[4rem] border border-secondary/20 neon-glow">
+<h2 class="font-display-sm text-display-sm text-white mb-margin-desktop cinematic-heading">Stay Ahead of the Market</h2>
+<p class="font-body-xl text-body-xl text-white/70 mb-margin-desktop max-w-2xl mx-auto font-light">Get exclusive access to off-market listings and monthly market analysis from our lead economists.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+<input class="flex-1 bg-background/50 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder:text-white/30 focus:ring-1 focus:ring-secondary focus:border-secondary font-body-md backdrop-blur-xl tracking-wide" placeholder="Your professional email" type="email">
+<button class="bg-secondary/10 border border-secondary/50 text-secondary px-12 py-5 rounded-2xl font-label-caps tracking-[0.2em] hover:bg-secondary hover:text-background transition-all shadow-[0_0_20px_rgba(25,255,223,0.1)] hover:shadow-[0_0_30px_rgba(25,255,223,0.4)]">SUBSCRIBE</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-margin-desktop glass-panel border-t border-white/10 relative z-10 mt-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-section-gap">
+<div class="md:col-span-1">
+<span class="font-display-sm text-[32px] font-bold text-white mb-margin-desktop block cinematic-heading uppercase tracking-widest">HomeHub</span>
+<p class="text-on-surface-variant font-body-md mb-margin-desktop leading-relaxed">Redefining the real estate experience through transparency, precision, and unwavering integrity.</p>
+<div class="flex gap-gutter">
+<a class="text-white/50 hover:text-secondary hover:drop-shadow-[0_0_10px_rgba(25,255,223,0.5)] transition-all" href="#"><span class="material-symbols-outlined text-3xl">public</span></a>
+<a class="text-white/50 hover:text-secondary hover:drop-shadow-[0_0_10px_rgba(25,255,223,0.5)] transition-all" href="#"><span class="material-symbols-outlined text-3xl">mail</span></a>
+<a class="text-white/50 hover:text-secondary hover:drop-shadow-[0_0_10px_rgba(25,255,223,0.5)] transition-all" href="#"><span class="material-symbols-outlined text-3xl">share</span></a>
+</div>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.3em]">THE COMPANY</h5>
+<ul class="space-y-6">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Our Agents</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Office Locations</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Newsroom</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.3em]">RESOURCES</h5>
+<ul class="space-y-6">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Newsletter Signup</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Buyer's Guide</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Seller's Guide</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Mortgage Calculator</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.3em]">LEGAL</h5>
+<ul class="space-y-6">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Accessibility</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all tracking-wide" href="#">Fair Housing</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-section-gap pt-margin-desktop border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-gutter">
+<p class="text-on-surface-variant font-body-md text-sm tracking-wide">© 2024 HomeHub Real Estate Brokerage. All rights reserved.</p>
+<div class="flex gap-gutter font-label-caps text-on-surface-variant opacity-60 tracking-[0.2em] text-[10px]">
+<span>EHO EQUAL HOUSING OPPORTUNITY</span>
+<span>REALTOR®</span>
+</div>
+</div>
+</footer>
+<!-- Intersection Observer for Fade-In Effects -->
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Minimalist Navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-background/80', 'backdrop-blur-xl', 'shadow-[0_4px_30px_rgba(25,255,223,0.1)]');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-background/80', 'backdrop-blur-xl', 'shadow-[0_4px_30px_rgba(25,255,223,0.1)]');
+                nav.classList.add('bg-transparent');
+            }
+        });
+</script>
+<!-- WebGL Background Setup -->
+<script>
+    const canvas = document.getElementById('shader-bg');
+    const gl = canvas.getContext('webgl');
+
+    if (gl) {
+        // Vertex shader
+        const vsSource = `
+            attribute vec4 a_position;
+            varying vec2 v_texCoord;
+            void main() {
+                gl_Position = a_position;
+                v_texCoord = a_position.xy * 0.5 + 0.5;
+            }
+        `;
+
+        // Fragment shader from DataStore
+        const fsSource = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // Create organic flowing movement
+    float t = u_time * 0.2;
+    vec2 p = uv * 3.0;
+    
+    for(int i=1; i<4; i++) {
+        float fi = float(i);
+        p.x += 0.5 / fi * sin(fi * p.y + t + m.x * 2.0);
+        p.y += 0.5 / fi * cos(fi * p.x + t + m.y * 2.0);
+    }
+    
+    // Aetheris Prime Palette (Dark Slates & Neon Teals)
+    vec3 color1 = vec3(0.04, 0.05, 0.06); // Deep midnight
+    vec3 color2 = vec3(0.06, 0.08, 0.10); // Dark slate
+    vec3 accent = vec3(0.1, 0.85, 0.75);  // Electric teal
+    
+    float noise = 0.5 + 0.5 * sin(p.x + p.y);
+    vec3 finalColor = mix(color1, color2, noise);
+    finalColor += accent * pow(noise, 10.0) * 0.3; // Glow peaks
+    
+    // Add subtle vignetting
+    float dist = distance(uv, vec2(0.5));
+    finalColor *= 1.0 - dist * 0.5;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}
+        `;
+
+        function createShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        }
+
+        const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+        const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+        gl.useProgram(program);
+
+        const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+        const positionLocation = gl.getAttribLocation(program, 'a_position');
+        gl.enableVertexAttribArray(positionLocation);
+        gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+        const timeLocation = gl.getUniformLocation(program, 'u_time');
+        const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
+        const mouseLocation = gl.getUniformLocation(program, 'u_mouse');
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function resizeCanvasToDisplaySize(canvas) {
+            const displayWidth  = canvas.clientWidth;
+            const displayHeight = canvas.clientHeight;
+            if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+                canvas.width  = displayWidth;
+                canvas.height = displayHeight;
+                return true;
+            }
+            return false;
+        }
+
+        function render(time) {
+            time *= 0.001;
+            resizeCanvasToDisplaySize(gl.canvas);
+            gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+            
+            gl.uniform1f(timeLocation, time);
+            gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
+            gl.uniform2f(mouseLocation, mouseX, gl.canvas.height - mouseY);
+            
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            requestAnimationFrame(render);
+        }
+        
+        requestAnimationFrame(render);
+    }
+</script>
+<!-- Three.js Core Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById('three-container');
+        if (container && typeof THREE !== 'undefined') {
+            const width = container.clientWidth || window.innerWidth;
+            const height = container.clientHeight || window.innerHeight;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            container.appendChild(renderer.domElement);
+
+            // Create an abstract "futuristic home" wireframe representation
+            const group = new THREE.Group();
+            scene.add(group);
+
+            const material = new THREE.MeshPhongMaterial({
+                color: 0x19ffdf, // Electric Teal
+                wireframe: true,
+                transparent: true,
+                opacity: 0.3
+            });
+
+            // Central core
+            const coreGeom = new THREE.IcosahedronGeometry(1.5, 2);
+            const core = new THREE.Mesh(coreGeom, material);
+            group.add(core);
+
+            // Floating structure rings
+            for (let i = 0; i < 3; i++) {
+                const ringGeom = new THREE.TorusGeometry(2.5 + i * 0.8, 0.02, 16, 100);
+                const ring = new THREE.Mesh(ringGeom, material);
+                ring.rotation.x = Math.random() * Math.PI;
+                ring.rotation.y = Math.random() * Math.PI;
+                group.add(ring);
+            }
+
+            const light = new THREE.PointLight(0x19ffdf, 1, 100);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0x404040));
+
+            camera.position.z = 8;
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.005;
+                group.rotation.x += 0.002;
+                
+                // Mouse interaction
+                const mouseX = (window.innerWidth / 2 - (window.u_mouse_x || 0)) * 0.0001;
+                const mouseY = (window.innerHeight / 2 - (window.u_mouse_y || 0)) * 0.0001;
+                group.rotation.y += mouseX;
+                group.rotation.x += mouseY;
+
+                renderer.render(scene, camera);
+            };
+
+            window.addEventListener('mousemove', (e) => {
+                window.u_mouse_x = e.clientX;
+                window.u_mouse_y = e.clientY;
+            });
+
+            window.addEventListener('resize', () => {
+                const w = container.clientWidth || window.innerWidth;
+                const h = container.clientHeight || window.innerHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+            });
+
+            animate();
+        }
+    });
+</script>
+</body></html>

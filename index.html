@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeHub | Premier Ultra-Luxury Real Estate Marketplace</title>
+  <meta name="description" content="Discover ultra-luxury estates powered by 3D architectural digital twins, real-time microclimate telemetry, and elite private client advisory.">
+  
+  <!-- Security Headers & Privacy Policies -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <!-- Tailwind CSS Play CDN for utility classes -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#101415",
+            "surface-low": "#191c1e",
+            "surface-high": "#272a2c",
+            "surface-highest": "#323537",
+            primary: "#bec6e0",
+            secondary: "#44e2cd",
+            "secondary-bright": "#62fae3",
+            tertiary: "#4de082"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "Georgia", "serif"],
+            body: ["Montserrat", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-surface text-gray-200 font-body overflow-x-hidden min-h-screen relative">
+  <!-- Dynamic WebGL Flowing Background Canvas -->
+  <canvas id="shader-bg-canvas" class="fixed inset-0 w-full h-full pointer-events-none -z-10 opacity-70"></canvas>
+
+  <div id="app" class="relative z-10 flex flex-col min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header id="nav-container"></header>
+
+    <!-- Main View Content Area -->
+    <main id="view-container" class="flex-1"></main>
+
+    <!-- Global Footer -->
+    <footer id="footer-container" class="border-t border-white/10 glass-panel-heavy mt-20"></footer>
+
+    <!-- Global Modals & Toast Manager Container -->
+    <div id="modals-container"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

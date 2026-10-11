@@ -1,0 +1,483 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>List Your Property | HomeHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css2-0c6ec1a12c79.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#131b2e",
+                    "primary-fixed": "#dae2fd",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-tertiary-container": "#75859d",
+                    "inverse-surface": "#2d3133",
+                    "secondary": "#006c49",
+                    "on-surface-variant": "#45464d",
+                    "tertiary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "on-secondary-container": "#00714d",
+                    "on-background": "#191c1e",
+                    "primary": "#000000",
+                    "outline-variant": "#c6c6cd",
+                    "surface-dim": "#d8dadc",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-secondary-fixed": "#002113",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "secondary-fixed-dim": "#4edea3",
+                    "inverse-primary": "#bec6e0",
+                    "on-surface": "#191c1e",
+                    "tertiary-container": "#0b1c30",
+                    "outline": "#76777d",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-variant": "#e0e3e5",
+                    "surface-bright": "#f7f9fb",
+                    "surface-tint": "#565e74",
+                    "surface": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#005236",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-container": "#7c839b",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-fixed": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "xl": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hide-step { opacity: 0; transform: translateX(20px); pointer-events: none; position: absolute; }
+        .active-step { opacity: 1; transform: translateX(0); position: relative; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-primary-container fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline shadow-sm">
+<nav class="max-w-container-max mx-auto px-lg flex justify-between items-center h-20">
+<div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed">HomeHub</div>
+<div class="hidden md:flex items-center gap-gutter font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Buy</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Rent</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1" href="#">Sell</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Land</a>
+</div>
+<button class="bg-secondary text-on-secondary px-md py-xs rounded-lg font-label-md active:scale-95 transition-transform">
+                List Property
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative bg-primary-container py-xl overflow-hidden">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A luxurious modern architectural home with expansive floor-to-ceiling glass windows at twilight. The interior warm lighting spills out onto a manicured green lawn and a sleek lap pool. The overall mood is sophisticated, premium, and serene, utilizing a palette of deep blues and warm ambers consistent with high-end real estate branding." src="assets/AB6AXuBl_rmM5GWJNxOBJP7-FMeSr39QE8cCMIR05JXgcEkJinI_unBZ-uhbhZb1E-Yl0IToJ0rTeVtmtqgPX2SyLe1T2bXQ8vRZ-b7bec4d0dc68.png">
+</div>
+<div class="max-w-container-max mx-auto px-lg relative z-10 text-center">
+<h1 class="font-display-lg text-display-lg text-white mb-md">Sell your home for more.</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed max-w-2xl mx-auto mb-lg">HomeHub uses advanced data analytics and premium marketing to ensure your property reaches the right buyers at the right price.</p>
+<!-- Valuation Promo -->
+<div class="glass-panel rounded-xl p-md inline-flex items-center gap-md max-w-lg mx-auto text-left">
+<div class="bg-secondary/20 p-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-primary-fixed">Instant Valuation Tool</h4>
+<p class="font-caption text-caption text-on-primary-fixed/80">Get a free, data-backed estimate of your property's current market value in seconds.</p>
+</div>
+<button class="bg-secondary text-on-secondary px-md py-sm rounded-lg font-label-md shrink-0">Try Tool</button>
+</div>
+</div>
+</section>
+<!-- Multi-Step Listing Form -->
+<section class="py-xl max-w-4xl mx-auto px-md">
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-base">
+<h2 class="font-headline-lg text-headline-lg">List Your Property</h2>
+<span class="font-label-md text-secondary" id="step-indicator">Step 1 of 4</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-500" id="progress-bar" style="width: 25%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-lg relative min-h-[500px] overflow-hidden">
+<form id="listing-form">
+<!-- Step 1: Property Details -->
+<div class="step-transition active-step" id="step-1">
+<h3 class="font-headline-md text-headline-md mb-md">Property Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Property Type</label>
+<select class="w-full h-12 px-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all">
+<option>Single Family Home</option>
+<option>Condominium</option>
+<option>Townhouse</option>
+<option>Luxury Villa</option>
+<option>Land / Plot</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Expected Price ($)</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" placeholder="e.g. 550,000" type="number">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Bedrooms</label>
+<div class="flex gap-xs">
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">1</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">2</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg bg-secondary text-on-secondary" type="button">3</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">4+</button>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Bathrooms</label>
+<div class="flex gap-xs">
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">1</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg bg-secondary text-on-secondary" type="button">2</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">3</button>
+<button class="flex-1 py-base border border-outline-variant rounded-lg hover:bg-surface-container transition-colors" type="button">4+</button>
+</div>
+</div>
+<div class="md:col-span-2 space-y-xs">
+<label class="font-label-md text-on-surface-variant">Property Description</label>
+<textarea class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" placeholder="Tell buyers what makes your home special..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<!-- Step 2: Location -->
+<div class="step-transition hide-step" id="step-2">
+<h3 class="font-headline-md text-headline-md mb-md">Location</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-md">
+<div class="md:col-span-2 space-y-xs">
+<label class="font-label-md text-on-surface-variant">Street Address</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="123 Modern Ave" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">City</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="San Francisco" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Zip Code</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="94103" type="text">
+</div>
+</div>
+<div class="h-64 rounded-xl overflow-hidden relative border border-outline-variant">
+<img class="w-full h-full object-cover grayscale opacity-50" data-alt="A clean, minimalist digital map representation showing urban grid lines and green park spaces. The aesthetic is monochromatic and professional, designed for a high-end real estate interface, emphasizing precision and location clarity without visual clutter." data-location="San Francisco" src="assets/AB6AXuDPsxX-d-zQ00A4DcSDIfMfY1wSr1cFhVJ6WWY9ZDI9jylEeF7JJW2x8VGM2xIHHd3zlZ5PqfJYtdPPE3P01bxtgLRyIRxI-5e591151ad13.png">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-5xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Media -->
+<div class="step-transition hide-step" id="step-3">
+<h3 class="font-headline-md text-headline-md mb-md">Media &amp; Photos</h3>
+<p class="font-body-md text-on-surface-variant mb-md">High-quality photos can increase closing prices by up to 10%. We recommend at least 15 photos.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-base mb-md">
+<div class="aspect-square bg-surface-container rounded-lg flex flex-col items-center justify-center border-2 border-dashed border-outline-variant cursor-pointer hover:border-secondary group transition-colors">
+<span class="material-symbols-outlined text-outline group-hover:text-secondary mb-xs">add_a_photo</span>
+<span class="font-caption text-caption text-outline group-hover:text-secondary">Add Photo</span>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover" data-alt="Bright, airy modern kitchen interior with white marble countertops, minimalist wooden cabinetry, and stainless steel high-end appliances. Natural light floods the space from a large window. The photo uses professional architectural photography angles with a clean, high-end real estate aesthetic." src="assets/AB6AXuAbprb0ry9BVlYqApAlh5OBBvlavMSd0bKCe-3tIJDfqUItD00KxZUTsrGu0SwfkQkIbPEhHkFtr3NfrDl2cBo4hXaDcpNP-52d8d7105e8f.png">
+<button class="absolute top-1 right-1 bg-error text-white rounded-full p-xs opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-base">close</span></button>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover" data-alt="A spacious modern living room with a large neutral-toned sectional sofa, a minimalist coffee table, and an abstract art piece on the wall. Large windows show a hint of green trees outside. The lighting is soft and even, highlighting a clean, sophisticated, and inviting living environment." src="assets/AB6AXuBWLN7HLO46ZdeV0PNKcKwN_pABeboYEIVPdrWUcsHEOwpUBZ9JQTEVlESyUZy6wOSbw0FaFON9BhY6GkrlCdqxz0JVmVhy-122861957b94.png">
+<button class="absolute top-1 right-1 bg-error text-white rounded-full p-xs opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-base">close</span></button>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden group relative">
+<img class="w-full h-full object-cover" data-alt="A serene master bedroom featuring a king-sized bed with crisp white linens and a minimalist wooden frame. Soft lighting from bedside lamps creates a cozy, high-end hotel ambiance. The room is decorated in a muted, sophisticated palette of grays and whites, following a modern architectural style." src="assets/AB6AXuDPrwVerx16tWmCkLZBUCvraNyMOwLwI_uNHFmidBZDtB-slwtnM-D8O2vU-aJ5tkn-R36sVf_pN-PwGLHfko-Gj1WTylNn-f0d07c663ec3.png">
+<button class="absolute top-1 right-1 bg-error text-white rounded-full p-xs opacity-0 group-hover:opacity-100 transition-opacity"><span class="material-symbols-outlined text-base">close</span></button>
+</div>
+</div>
+<div class="bg-secondary/10 p-md rounded-lg border border-secondary/20 flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<div>
+<p class="font-label-md text-on-secondary-container">Professional Photography Service</p>
+<p class="font-caption text-on-secondary-container/80">Don't have professional photos? Check this box and we'll send a HomeHub photographer to your property for free as part of your listing package.</p>
+</div>
+<input class="rounded text-secondary focus:ring-secondary mt-1" type="checkbox">
+</div>
+</div>
+<!-- Step 4: Contact -->
+<div class="step-transition hide-step" id="step-4">
+<h3 class="font-headline-md text-headline-md mb-md">Contact Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Full Name</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Email Address</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="john@example.com" type="email">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Phone Number</label>
+<input class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none" placeholder="+1 (555) 000-0000" type="tel">
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface-variant">Best Time to Call</label>
+<select class="w-full h-12 px-md border border-outline-variant rounded-lg outline-none">
+<option>Morning (9 AM - 12 PM)</option>
+<option>Afternoon (12 PM - 5 PM)</option>
+<option>Evening (5 PM - 8 PM)</option>
+</select>
+</div>
+</div>
+<div class="mt-lg p-md border border-outline-variant rounded-lg bg-surface-container-low">
+<label class="flex items-center gap-md cursor-pointer">
+<input class="rounded text-secondary focus:ring-secondary" type="checkbox">
+<span class="font-caption text-on-surface-variant">I agree to HomeHub's Terms of Service and Privacy Policy. I confirm that I am the legal owner or authorized representative of this property.</span>
+</label>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex justify-between items-center mt-xl pt-lg border-t border-outline-variant">
+<button class="hidden text-on-surface-variant font-label-md hover:text-primary transition-colors flex items-center gap-xs" id="prev-btn" type="button">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back
+                        </button>
+<div class="flex-1"></div>
+<button class="bg-secondary text-on-secondary px-xl py-base rounded-lg font-label-md active:scale-95 transition-transform" id="next-btn" type="button">
+                            Next Step
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg mb-base">Successful Sellers</h2>
+<p class="font-body-md text-on-surface-variant">Join thousands who have listed and sold with HomeHub.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-secondary mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"HomeHub made the listing process incredibly seamless. Within 48 hours of posting, we had 5 viewings scheduled and an offer above asking by the weekend."</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling woman in her 40s against a neutral studio background. She radiates confidence and success. The lighting is soft and flattering, maintaining a high-end corporate lifestyle aesthetic that conveys trust and reliability." src="assets/AB6AXuCd_0sSevBMRaotUWVyKisAEB4atAisjumhCK5sCD0KyQy2XLs9L2a4HtP8AF2H_yA8baApTZJi_q3is3Fh7BAkmv0KIU2T-bea0f003d98f.png">
+</div>
+<div>
+<p class="font-label-md text-on-surface">Sarah Mitchell</p>
+<p class="font-caption text-on-surface-variant">Sold in San Francisco</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-secondary mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"The valuation tool was spot on. I wasn't sure if now was the right time to sell, but the data provided gave me the confidence to list. Excellent service!"</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a man in a sharp navy blazer, looking directly into the camera with a reassuring smile. The background is a slightly out-of-focus modern office setting. The overall style is clean, modern, and professional, suggesting a successful real estate transaction." src="assets/AB6AXuApvyLgdYJxE3gTw-xlbqVAI_UFP5fiwEsaspqnnh4EqZyj5qlQpo23hv5NWsnndN179d8vGsSOXbgel3y6fTfhVto6mK2p-ac1d3ea5edff.png">
+</div>
+<div>
+<p class="font-label-md text-on-surface">David Chen</p>
+<p class="font-caption text-on-surface-variant">Sold in Austin</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex text-secondary mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"The photography service alone is worth it. They captured my home beautifully, and the listing manager guided me through every step of the paperwork."</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional and friendly headshot of a woman with a warm expression, wearing business casual attire. The lighting is bright and airy, consistent with a modern, high-end digital platform. The visual style communicates approachability and professional success in a premium context." src="assets/AB6AXuAKy9wcVRL8mq4nwTxyM0QhzBPq_AcR9GgOkJuEiS7-SropohFJczvXXG_WOUJO2mbEA3ifZV18-T7yDQq1mzsmR2yzystU-2a0e87b49cca.png">
+</div>
+<div>
+<p class="font-label-md text-on-surface">Elena Rodriguez</p>
+<p class="font-caption text-on-surface-variant">Sold in Miami</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container w-full pt-xl pb-lg border-t border-outline/20">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-md">
+<div class="font-headline-md text-headline-md font-bold text-primary-fixed">HomeHub</div>
+<p class="font-body-md text-on-primary-container opacity-80">Empowering homeowners and investors through precision technology and elite market insights.</p>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-primary-fixed uppercase tracking-wider">Company</h5>
+<ul class="space-y-base">
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Office Locations</a></li>
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Our Agents</a></li>
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-primary-fixed uppercase tracking-wider">Legal</h5>
+<ul class="space-y-base">
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Fair Housing</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-primary-fixed uppercase tracking-wider">Newsletter</h5>
+<p class="font-caption text-on-primary-container opacity-80">Get market updates and listing tips.</p>
+<div class="flex gap-xs">
+<input class="bg-tertiary-container border border-outline/30 rounded-lg px-md py-xs text-white outline-none w-full" placeholder="Email address" type="email">
+<button class="bg-secondary text-on-secondary px-md rounded-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg mt-xl pt-lg border-t border-outline/20">
+<p class="text-on-primary-container opacity-60 text-caption">© 2024 HomeHub Real Estate Brokerage. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        const steps = [
+            document.getElementById('step-1'),
+            document.getElementById('step-2'),
+            document.getElementById('step-3'),
+            document.getElementById('step-4')
+        ];
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const stepIndicator = document.getElementById('step-indicator');
+        
+        let currentStep = 0;
+
+        function updateUI() {
+            steps.forEach((step, idx) => {
+                if (idx === currentStep) {
+                    step.classList.remove('hide-step');
+                    step.classList.add('active-step');
+                } else {
+                    step.classList.add('hide-step');
+                    step.classList.remove('active-step');
+                }
+            });
+
+            // Progress bar
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            stepIndicator.textContent = `Step ${currentStep + 1} of ${steps.length}`;
+
+            // Buttons
+            if (currentStep === 0) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentStep === steps.length - 1) {
+                nextBtn.textContent = 'Submit Listing';
+            } else {
+                nextBtn.textContent = 'Next Step';
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateUI();
+                window.scrollTo({ top: document.querySelector('section.py-xl').offsetTop - 100, behavior: 'smooth' });
+            } else {
+                alert('Property Listing Submitted Successfully!');
+                // Here you would normally handle form submission
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateUI();
+                window.scrollTo({ top: document.querySelector('section.py-xl').offsetTop - 100, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html><html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>HomeHub | Premier Real Estate Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css2-68a53b995564.png" rel="stylesheet">
+<link href="assets/css2-26cd08d450d9.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error": "#ffb4ab",
+                "on-background": "#e0e3e5",
+                "on-error": "#690005",
+                "secondary-fixed": "#62fae3",
+                "inverse-on-surface": "#2d3133",
+                "surface": "#101415",
+                "on-secondary-fixed-variant": "#005047",
+                "surface-bright": "#363a3b",
+                "on-tertiary": "#003919",
+                "secondary-fixed-dim": "#3cddc7",
+                "surface-variant": "#323537",
+                "tertiary-fixed": "#6dfe9c",
+                "on-secondary": "#003731",
+                "inverse-primary": "#565e74",
+                "on-primary": "#283044",
+                "on-tertiary-fixed": "#00210c",
+                "primary-fixed": "#dae2fd",
+                "error-container": "#93000a",
+                "secondary": "#44e2cd",
+                "background": "#101415",
+                "tertiary-container": "#001d0a",
+                "surface-tint": "#bec6e0",
+                "surface-container-highest": "#323537",
+                "tertiary-fixed-dim": "#4de082",
+                "on-tertiary-fixed-variant": "#005227",
+                "on-surface-variant": "#c6c6cd",
+                "outline": "#909097",
+                "surface-container-high": "#272a2c",
+                "secondary-container": "#03c6b2",
+                "surface-container-lowest": "#0b0f10",
+                "on-primary-fixed-variant": "#3f465c",
+                "inverse-surface": "#e0e3e5",
+                "surface-dim": "#101415",
+                "on-tertiary-container": "#00954b",
+                "on-secondary-fixed": "#00201c",
+                "on-secondary-container": "#004d44",
+                "primary": "#bec6e0",
+                "on-primary-container": "#798098",
+                "tertiary": "#4de082",
+                "surface-container": "#1d2022",
+                "primary-fixed-dim": "#bec6e0",
+                "outline-variant": "#45464d",
+                "on-surface": "#e0e3e5",
+                "surface-container-low": "#191c1e",
+                "on-primary-fixed": "#131b2e",
+                "on-error-container": "#ffdad6",
+                "primary-container": "#0f172a"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1440px",
+                "margin-desktop": "64px",
+                "margin-mobile": "24px",
+                "section-gap": "128px",
+                "gutter": "32px",
+                "unit": "8px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "display-sm": [
+                        "Playfair Display"
+                ],
+                "body-xl": [
+                        "Montserrat"
+                ],
+                "label-caps": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "38px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "84px",
+                        {
+                                "lineHeight": "92px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-sm": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-xl": [
+                        "20px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(16, 20, 21, 0.2), rgba(16, 20, 21, 1));
+        }
+        .glass-panel {
+            background: rgba(45, 49, 51, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 40px rgba(3, 198, 178, 0.15);
+        }
+        .bento-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -20px rgba(3, 198, 178, 0.3);
+            border-color: rgba(3, 198, 178, 0.5);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(68, 226, 205, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-panel shadow-sm h-24">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-full">
+<div class="flex items-center gap-gutter">
+<span class="font-display-sm text-display-sm font-bold text-primary glow-text">HomeHub</span>
+<div class="hidden md:flex gap-gutter">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-md text-body-md transition-colors duration-200" href="#">Buy</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="#">Rent</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="#">Sell</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary transition-colors duration-200" href="#">Land</a>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<button class="hidden lg:flex items-center gap-unit px-6 py-3 bg-secondary-container text-on-secondary-container rounded-full font-label-caps active:scale-95 transition-transform hover:bg-secondary hover:shadow-[0_0_20px_rgba(68,226,205,0.4)]">
+<span class="material-symbols-outlined" style="font-size: 20px;">add_home</span>
+                    LIST PROPERTY
+                </button>
+<button class="p-unit text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="mt-24">
+<!-- Hero Section -->
+<section class="relative h-[900px] min-h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-secondary-container/10 mix-blend-screen z-0"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="A cinematic, wide-angle photograph of a breathtaking modern architectural villa at twilight. The home features expansive glass walls, clean concrete lines, and warm internal lighting that glows against the deep blue dusk sky. A minimalist infinity pool in the foreground reflects the geometric structure. The atmosphere is quiet, luxurious, and highly sophisticated, rendered with a professional high-end real estate photography style." src="assets/AB6AXuCpenHFTF3i53_5ELnfMBf8uJqOqmktl3lnxVtThqKZFFVfFd449QvSBdXpzeCyOtM8rU2KbE3ZnKpIZq1JOz2ASmbELX-M-b479aed4d661.png">
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop text-center mt-section-gap">
+<h1 class="font-display-lg text-display-lg text-white mb-gutter drop-shadow-2xl">Discover Your Sanctuary</h1>
+<p class="font-body-xl text-body-xl text-primary mb-section-gap max-w-3xl mx-auto opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_forwards]">
+                    Premium real estate services tailored for the discerning buyer. Find the perfect home with our precision-driven market expertise.
+                </p>
+<!-- Central Search Bar -->
+<div class="glass-panel p-unit rounded-xl max-w-5xl mx-auto flex flex-col md:flex-row gap-unit items-stretch neon-glow relative">
+<div class="absolute -inset-1 bg-gradient-to-r from-secondary/30 to-tertiary/30 rounded-xl blur-lg -z-10"></div>
+<div class="flex-1 flex border-b md:border-b-0 md:border-r border-white/10">
+<div class="flex items-center px-gutter text-secondary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<input class="w-full border-none focus:ring-0 bg-transparent py-4 font-body-md text-white placeholder:text-on-surface-variant" placeholder="Location, Neighborhood, or Zip" type="text">
+</div>
+<div class="flex-1 flex border-b md:border-b-0 md:border-r border-white/10">
+<div class="flex items-center px-gutter text-secondary">
+<span class="material-symbols-outlined">home_work</span>
+</div>
+<select class="w-full border-none focus:ring-0 bg-transparent py-4 font-body-md text-on-surface-variant appearance-none">
+<option>Property Type</option>
+<option>Villa</option>
+<option>Penthouse</option>
+<option>Modern Estate</option>
+</select>
+</div>
+<button class="bg-secondary text-on-secondary px-12 py-4 rounded-lg font-label-caps tracking-widest hover:bg-secondary-fixed active:scale-95 transition-all shadow-[0_0_15px_rgba(68,226,205,0.3)]">
+                        SEARCH
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-section-gap relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-secondary/10 blur-[100px] rounded-full -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="glass-panel p-8 rounded-2xl">
+<h3 class="font-display-sm text-[56px] text-secondary mb-2 glow-text">10k+</h3>
+<p class="font-label-caps text-on-surface-variant">Properties Sold</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl">
+<h3 class="font-display-sm text-[56px] text-secondary mb-2 glow-text">$4.2B</h3>
+<p class="font-label-caps text-on-surface-variant">Transaction Volume</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl">
+<h3 class="font-display-sm text-[56px] text-secondary mb-2 glow-text">240</h3>
+<p class="font-label-caps text-on-surface-variant">Expert Agents</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl">
+<h3 class="font-display-sm text-[56px] text-secondary mb-2 glow-text">15</h3>
+<p class="font-label-caps text-on-surface-variant">Global Offices</p>
+</div>
+</div>
+</section>
+<!-- Featured Listings Section -->
+<section class="py-section-gap bg-surface relative">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-margin-desktop">
+<div>
+<span class="text-secondary font-label-caps mb-unit block tracking-[0.2em]">Exclusives</span>
+<h2 class="font-display-sm text-display-sm text-on-background">Featured Properties</h2>
+</div>
+<a class="text-secondary font-label-caps flex items-center gap-unit hover:gap-gutter transition-all" href="#">
+                        VIEW ALL LISTINGS <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Property Card 1 -->
+<div class="glass-panel rounded-2xl overflow-hidden bento-card-hover group border-white/5">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A ultra-luxury minimalist mansion in Los Angeles at golden hour. The exterior features seamless floor-to-ceiling glass, white limestone walls, and a large cantilevered roof. A sleek black sports car is parked in the driveway. The image has a warm, high-contrast aesthetic, emphasizing wealth and modern elegance in a high-key lighting scenario." src="assets/AB6AXuAU4repQ4O1N1iZdx1X9qtNVcnLRm3gB2Udw5Vjjuva3AkFsJzcYoydrRdhj5Vr5IUwUpHVx0YhjemfSsVemq-9_1bciLKU-6f54a8eb5a25.png">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute top-gutter left-gutter bg-secondary/80 backdrop-blur-sm text-on-secondary font-label-caps px-4 py-2 rounded-full">NEW LISTING</div>
+<button class="absolute top-gutter right-gutter bg-surface/40 backdrop-blur-md p-3 rounded-full text-white hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-gutter relative z-10 -mt-8 glass-panel mx-4 rounded-xl mb-4">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text">$8,450,000</p>
+<p class="text-on-surface-variant font-body-md mb-6">1240 Bel Air Crest Rd, Los Angeles</p>
+<div class="flex gap-gutter border-t border-white/10 pt-4">
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bed</span>
+<span class="font-label-caps">6 BEDS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bathtub</span>
+<span class="font-label-caps">8 BATHS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">square_foot</span>
+<span class="font-label-caps">12K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="glass-panel rounded-2xl overflow-hidden bento-card-hover group border-white/5">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A modern coastal estate overlooking the Mediterranean Sea. The house is built with organic materials like pale stone and light wood, featuring wide verandas and an outdoor lounge. The bright midday sun creates sharp shadows and highlights the turquoise water in the background. The mood is vacation-like, serene, and bright, following a white and emerald color palette." src="assets/AB6AXuCaiwkSA9Rm33WQmr1IjabOOlw2m_La2uZtVRlxXNG-ra92VkUqTYwU7APpJYv3B4I_rLjmhQAceRpcI7zoqt2zhdd18YdF-84369b413283.png">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute top-gutter left-gutter bg-primary/80 backdrop-blur-sm text-on-primary font-label-caps px-4 py-2 rounded-full">PRICE REDUCED</div>
+<button class="absolute top-gutter right-gutter bg-surface/40 backdrop-blur-md p-3 rounded-full text-white hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-gutter relative z-10 -mt-8 glass-panel mx-4 rounded-xl mb-4">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text">$4,120,000</p>
+<p class="text-on-surface-variant font-body-md mb-6">722 Ocean View Dr, Miami Beach</p>
+<div class="flex gap-gutter border-t border-white/10 pt-4">
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bed</span>
+<span class="font-label-caps">4 BEDS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bathtub</span>
+<span class="font-label-caps">5 BATHS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">square_foot</span>
+<span class="font-label-caps">5.4K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="glass-panel rounded-2xl overflow-hidden bento-card-hover group border-white/5">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A stunning A-frame glass cabin nestled in a dense emerald forest. The architecture is futuristic yet rustic, with dark metal framing and warm wooden interiors visible through the glass. Soft morning mist filters through the trees, creating a moody, atmospheric, and highly private visual. The color palette centers on deep greens, blacks, and natural wood tones, emphasizing a luxury retreat feel." src="assets/AB6AXuDijB93hMnyAtlZ-1DjFoqct5jrp_FPlz2giErcOZLwjUizfKIB_KYyV-X7mShFhxXXyzvXsSWLfz9_NTm__M1p0vGOrnR1-519910d1147b.png">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute top-gutter left-gutter bg-tertiary/80 backdrop-blur-sm text-on-tertiary font-label-caps px-4 py-2 rounded-full">TRENDING</div>
+<button class="absolute top-gutter right-gutter bg-surface/40 backdrop-blur-md p-3 rounded-full text-white hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">favorite</span>
+</button>
+</div>
+<div class="p-gutter relative z-10 -mt-8 glass-panel mx-4 rounded-xl mb-4">
+<p class="font-headline-lg text-headline-lg text-secondary mb-2 glow-text">$2,800,000</p>
+<p class="text-on-surface-variant font-body-md mb-6">Wildwood Estate, Aspen Ridge</p>
+<div class="flex gap-gutter border-t border-white/10 pt-4">
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bed</span>
+<span class="font-label-caps">3 BEDS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">bathtub</span>
+<span class="font-label-caps">3 BATHS</span>
+</div>
+<div class="flex items-center gap-unit text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">square_foot</span>
+<span class="font-label-caps">3.1K SQFT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Section -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary-container/5 blur-[120px] rounded-full -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+<div>
+<span class="text-secondary font-label-caps tracking-[0.2em] mb-unit block glow-text">OUR VALUE</span>
+<h2 class="font-display-sm text-display-sm text-on-background mb-margin-desktop">Why Choose HomeHub for Your Journey</h2>
+<p class="font-body-xl text-body-xl text-on-surface-variant mb-margin-desktop leading-relaxed">
+                            We combine deep market intuition with cutting-edge data analytics to provide a real estate experience that is as precise as it is personal.
+                        </p>
+<div class="space-y-gutter">
+<div class="flex gap-gutter glass-panel p-6 rounded-2xl hover:border-secondary/30 transition-colors">
+<div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-3xl">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-primary mb-2">Vetted Listings</h4>
+<p class="text-on-surface-variant font-body-md">Every property is physically inspected and documentation verified by our compliance team.</p>
+</div>
+</div>
+<div class="flex gap-gutter glass-panel p-6 rounded-2xl hover:border-secondary/30 transition-colors">
+<div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-3xl">insights</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-primary mb-2">Predictive Pricing</h4>
+<p class="text-on-surface-variant font-body-md">Our AI models predict neighborhood value appreciation with 94% historical accuracy.</p>
+</div>
+</div>
+<div class="flex gap-gutter glass-panel p-6 rounded-2xl hover:border-secondary/30 transition-colors">
+<div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-3xl">handshake</span>
+</div>
+<div>
+<h4 class="font-headline-lg text-[24px] text-primary mb-2">Elite Brokerage</h4>
+<p class="text-on-surface-variant font-body-md">Connect with top 1% agents specialized in luxury estates and investment portfolios.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-gradient-to-tr from-secondary/20 to-transparent rounded-[3rem] blur-xl -z-10"></div>
+<div class="aspect-square glass-panel rounded-[2rem] overflow-hidden relative border border-white/10 p-2">
+<img class="w-full h-full object-cover rounded-[1.5rem] opacity-80" data-alt="A professional, diverse team of real estate agents in a high-end corporate office setting. They are looking at a large digital screen displaying data-rich maps and property analytics. The office is bright and airy with floor-to-ceiling windows showing a modern city skyline. The visual style is corporate modern, clean, and trustworthy, with a focus on emerald and navy accents." src="assets/AB6AXuBgV5aBVwaw34LXTdKVrVuTpTdV-8CjkRvbXoNDnbbgC9XzNSiYrxEArQsOgkdU_6uWPsUXhXf6QgPEXxcWAXx8oLp_-yAo-f40cd4ec4ccd.png">
+<div class="absolute bottom-gutter right-gutter glass-panel p-6 rounded-2xl border border-white/20 backdrop-blur-xl">
+<div class="flex items-center gap-gutter">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-slate-700"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-slate-600"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-slate-500"></div>
+</div>
+<span class="font-label-caps text-secondary">TRUSTED BY 50K+ FAMILIES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-section-gap relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-secondary/10 blur-[120px] rounded-full z-0"></div>
+<div class="max-w-4xl mx-auto px-margin-desktop text-center relative z-10 glass-panel p-16 rounded-[3rem] border border-white/10">
+<h2 class="font-display-sm text-display-sm text-white mb-margin-desktop">Stay Ahead of the Market</h2>
+<p class="font-body-xl text-body-xl text-primary-fixed/80 mb-margin-desktop">Get exclusive access to off-market listings and monthly market analysis from our lead economists.</p>
+<form class="flex flex-col md:flex-row gap-unit max-w-2xl mx-auto">
+<input class="flex-1 bg-surface/50 border border-white/20 rounded-xl px-6 py-4 text-white placeholder:text-white/40 focus:ring-2 focus:ring-secondary focus:border-transparent font-body-md backdrop-blur-md" placeholder="Your professional email" type="email">
+<button class="bg-secondary text-surface px-10 py-4 rounded-xl font-label-caps hover:bg-secondary-fixed transition-all shadow-[0_0_20px_rgba(68,226,205,0.2)]">SUBSCRIBE</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-margin-desktop bg-surface-container-lowest border-t border-white/5 relative z-10">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-section-gap">
+<div class="md:col-span-1">
+<span class="font-display-sm text-[32px] font-bold text-primary mb-margin-desktop block glow-text">HomeHub</span>
+<p class="text-on-surface-variant font-body-md mb-margin-desktop leading-relaxed">Redefining the real estate experience through transparency, precision, and unwavering integrity.</p>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">public</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">mail</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-3xl">share</span></a>
+</div>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.2em]">THE COMPANY</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Our Agents</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Office Locations</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Newsroom</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.2em]">RESOURCES</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Newsletter Signup</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Buyer's Guide</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Seller's Guide</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Mortgage Calculator</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-secondary font-label-caps mb-margin-desktop tracking-[0.2em]">LEGAL</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Accessibility</a></li>
+<li><a class="text-on-surface-variant font-body-md hover:text-secondary transition-all" href="#">Fair Housing</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-section-gap pt-margin-desktop border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-gutter">
+<p class="text-on-surface-variant font-body-md text-sm">© 2024 HomeHub Real Estate Brokerage. All rights reserved.</p>
+<div class="flex gap-gutter font-label-caps text-on-surface-variant opacity-60">
+<span>EHO EQUAL HOUSING OPPORTUNITY</span>
+<span>REALTOR®</span>
+</div>
+</div>
+</footer>
+<!-- Intersection Observer for Fade-In Effects -->
+<script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Sticky Navbar subtle shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,42 @@
+# Secrets and Environment Variables (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Dependencies
+node_modules/
+package-lock.json.bak
+
+# Build outputs
+dist/
+build/
+.output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System & IDE artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing & Cache
+.cache/
+.temp/
+.tmp/
+.eslintcache
+
+# System generated internal agent artifacts
+.system_generated/

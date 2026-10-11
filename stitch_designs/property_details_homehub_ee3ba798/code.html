@@ -1,0 +1,393 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>HomeHub | Property Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css2-0c6ec1a12c79.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#131b2e",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container": "#eceef0",
+                        "background": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-tertiary-container": "#75859d",
+                        "inverse-surface": "#2d3133",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#45464d",
+                        "tertiary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-container": "#00714d",
+                        "on-background": "#191c1e",
+                        "primary": "#000000",
+                        "outline-variant": "#c6c6cd",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#0b1c30",
+                        "outline": "#76777d",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-variant": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "surface-tint": "#565e74",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#005236",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed-dim": "#bec6e0",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-container": "#7c839b",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e0e3e5; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg flex justify-between items-center h-20">
+<div class="flex items-center gap-xl">
+<span class="font-display-lg text-display-lg font-bold text-primary">HomeHub</span>
+<nav class="hidden md:flex gap-md">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Buy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Rent</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Sell</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Land</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="h-10 pl-10 pr-4 rounded-lg border-outline-variant bg-surface-container focus:ring-2 focus:ring-secondary focus:border-secondary outline-none text-body-md w-64" placeholder="Search address, city..." type="text">
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md active:scale-95 transition-transform">List Property</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-xl max-w-container-max mx-auto px-lg">
+<!-- Hero Gallery Section -->
+<section class="grid grid-cols-12 gap-base mb-lg rounded-xl overflow-hidden h-[500px]">
+<div class="col-span-12 md:col-span-8 h-full relative group">
+<img alt="Main Property View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A grand modernist architectural masterpiece of a house at twilight. The structure features expansive floor-to-ceiling glass walls that reveal a warm, glowing interior with minimalist designer furniture. The exterior is a blend of smooth white concrete and rich dark wood panels. Manicured lawn and a shimmering infinity pool are visible in the foreground under a deep blue dusk sky. The style is premium, clean, and high-end real estate photography." src="assets/AB6AXuDqqFzu0H7vOOaASMpsjJBST3rze-8WOXBWpFcjrY2rcgZHy3qKor7B5sIIV-PGre8DG1ATfL5YYaU-KlB5ikctwDDXSTz3-57452cc7e249.png">
+<div class="absolute bottom-md right-md flex gap-sm">
+<button class="bg-surface-container-lowest/90 backdrop-blur-md px-md py-sm rounded-lg flex items-center gap-xs text-label-md font-bold text-primary shadow-lg hover:bg-white transition-all">
+<span class="material-symbols-outlined">photo_library</span> View All Photos
+                    </button>
+</div>
+</div>
+<div class="hidden md:flex md:col-span-4 flex-col gap-base h-full">
+<div class="h-1/2 overflow-hidden group">
+<img alt="Living Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxurious open-plan living room with high-end contemporary furnishings. A large plush charcoal grey sofa sits on a neutral textured rug. Large windows flood the space with natural light. The walls are a soft off-white, complemented by dark wood accents and a minimalist fireplace. High-key lighting creates an airy and professional atmosphere typical of luxury interior design." src="assets/AB6AXuDTsLbQQaPIcPCZ4UfdmArqTbADedYxyQhEaWzZ7UmASVSOcWuYofYst927Wu8zQFqSs7g9-Q33IQc-NiII6EwWVGagLXer-2a531706df8c.png">
+</div>
+<div class="h-1/2 overflow-hidden group">
+<img alt="Kitchen Area" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern professional kitchen with sleek matte black cabinetry and white marble countertops. High-end stainless steel appliances are seamlessly integrated. A large island with breakfast stools serves as a focal point. Warm pendant lighting hangs from the ceiling. The design is minimalist and sophisticated, highlighting cleanliness and premium quality materials." src="assets/AB6AXuAEMfQJvpQPfPmhyv4g-z22qnNiw8ezAo0De_zQvl8TIkvQBvdqFwvgUCPaHGFvm803XdJYgZpWKmWq_vSo8bJhcSzhy_kD-c8660e328f62.png">
+</div>
+</div>
+</section>
+<!-- Main Content & Sidebar -->
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Left: Property Details -->
+<div class="lg:w-2/3 space-y-lg">
+<!-- Header Info -->
+<div class="border-b border-outline-variant pb-md flex flex-col md:flex-row md:justify-between md:items-end gap-md">
+<div>
+<div class="flex gap-sm mb-sm">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-md text-xs uppercase tracking-wider">For Sale</span>
+<span class="bg-surface-container-high text-on-surface-variant px-sm py-xs rounded-full font-label-md text-xs uppercase tracking-wider">New Construction</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Skyline View Penthouse</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+                            742 Evergreen Terrace, Heights District, Seattle, WA
+                        </p>
+</div>
+<div class="text-left md:text-right">
+<span class="font-display-lg text-display-lg text-secondary block">$2,450,000</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Est. Mortgage: $12,450/mo</span>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md py-md border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">bed</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md">4</span>
+<span class="font-label-md text-on-surface-variant uppercase text-xs">Bedrooms</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">bathtub</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md">3.5</span>
+<span class="font-label-md text-on-surface-variant uppercase text-xs">Bathrooms</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">square_foot</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md">3,240</span>
+<span class="font-label-md text-on-surface-variant uppercase text-xs">Sq Ft</span>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">garage</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md">2</span>
+<span class="font-label-md text-on-surface-variant uppercase text-xs">Parking</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<article>
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Description</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Experience the pinnacle of urban luxury in this stunning skyline penthouse. Featuring floor-to-ceiling windows that provide panoramic views of the city and waterfront, this architectural marvel blends contemporary design with unparalleled comfort. The open-concept layout flows seamlessly from the professional-grade kitchen into the expansive living area, making it an entertainer's dream.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-md leading-relaxed">
+                        Every detail has been meticulously curated, from the custom Italian cabinetry to the smart home automation system that controls lighting, climate, and security with a single touch. The master suite offers a private sanctuary with a spa-inspired wet room and a private terrace overlooking the downtown skyline.
+                    </p>
+</article>
+<!-- Key Features -->
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Key Features</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Smart Home Automation</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Private Rooftop Terrace</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Wine Cellar (200+ Bottles)</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">EV Charging Station</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Heated Bathroom Floors</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Dual-Zone Climate Control</span>
+</div>
+</div>
+</div>
+<!-- Virtual Tour -->
+<div class="relative rounded-xl overflow-hidden group cursor-pointer h-64">
+<img alt="Virtual Tour Background" class="w-full h-full object-cover filter brightness-50 group-hover:scale-105 transition-transform duration-700" data-alt="A wide-angle interior view of a luxury penthouse hallway leading into a massive bright living area. The image is overlayed with a 3D interface indicator for a virtual tour. The lighting is crisp and even, showcasing high-end finishes like polished concrete floors and architectural lighting. Professional real estate visualization style." src="assets/AB6AXuAMocH4LMHOaABtsXPFSXESM2l_x9HII7zVUhY5z_r3mWMcQtjCwBNOcFxHt0ItjG_hi7z0UYnSgturbl2rJSQ3PqeuxItP-e8e8a341345e.png">
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+<div class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-md shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-4xl">play_arrow</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Launch 3D Virtual Tour</h3>
+<p class="font-label-md">Explore every corner in high-resolution 4K</p>
+</div>
+</div>
+<!-- Map & Neighborhood -->
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Location &amp; Neighborhood</h2>
+<div class="h-[400px] rounded-xl bg-surface-container-high relative overflow-hidden border border-outline-variant">
+<img alt="Neighborhood Map" class="w-full h-full object-cover opacity-80" data-alt="A clean, minimalist digital map of a modern urban district with subtle grey and emerald color coding. Key landmarks like schools, parks, and high-end restaurants are marked with elegant custom icons. The map looks architectural and professional, emphasizing a sophisticated neighborhood layout." data-location="Seattle" src="assets/AB6AXuAUKGJrPCrf0y8Ly1aFRENq2METBJ4OdD0fAvC17nghEbPcRPh4fQIEz6PnfW6m7Q5rBtXT0UlZJ2_FbuOwrw65yfW8W1xJ-de4ea013eed2.png">
+<div class="absolute top-md left-md bg-white p-md rounded-lg shadow-xl border border-outline-variant max-w-xs">
+<h4 class="font-label-md font-bold text-primary mb-xs">Heights District</h4>
+<p class="font-caption text-on-surface-variant">Walk Score: 92 (Walker's Paradise)</p>
+<div class="mt-sm space-y-sm">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Transit Score</span>
+<span class="font-bold text-secondary">88</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full">
+<div class="bg-secondary h-full rounded-full w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Sticky Sidebar -->
+<aside class="lg:w-1/3">
+<div class="sticky top-24 space-y-md">
+<!-- Contact Agent Form -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-md">
+<img alt="Agent Photo" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of a professional male real estate agent in a tailored charcoal suit. He is smiling warmly against a blurred modern office background. High-key lighting, corporate but approachable headshot style, emphasizing trust and authority." src="assets/AB6AXuAHFY7sQ67vwIefOsQEZ5ZAbfpEZq2p3HqnIe-sgoIN0l_Q5M6jvCIB1gy7EcUWs_fP5eI2G2qC_cqwOiCW3VmBpLN5_Yhj-692499c9f75f.png">
+<div>
+<h4 class="font-body-md font-bold text-primary">Marcus Sterling</h4>
+<p class="font-caption text-on-surface-variant">Platinum Listing Agent</p>
+</div>
+</div>
+<form class="space-y-sm">
+<input class="w-full h-12 px-md rounded-lg border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-secondary focus:border-secondary outline-none text-body-md" placeholder="Your Name" type="text">
+<input class="w-full h-12 px-md rounded-lg border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-secondary focus:border-secondary outline-none text-body-md" placeholder="Your Email" type="email">
+<input class="w-full h-12 px-md rounded-lg border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-secondary focus:border-secondary outline-none text-body-md" placeholder="Phone Number" type="tel">
+<textarea class="w-full px-md py-sm rounded-lg border-outline-variant bg-surface-container-low focus:ring-2 focus:ring-secondary focus:border-secondary outline-none text-body-md resize-none" placeholder="I'm interested in Skyline View Penthouse..." rows="4"></textarea>
+<button class="w-full bg-secondary text-white py-md rounded-lg font-label-md font-bold hover:bg-on-secondary-container transition-colors active:scale-[0.98] transition-transform">Schedule a Tour</button>
+<button class="w-full border border-secondary text-secondary py-md rounded-lg font-label-md font-bold hover:bg-secondary/5 transition-colors" type="button">Request Info</button>
+</form>
+<p class="font-caption text-center mt-sm text-on-surface-variant px-md">By clicking, you agree to our Terms of Use and Privacy Policy.</p>
+</div>
+<!-- Market Insights Card -->
+<div class="bg-primary-container p-md rounded-xl text-white">
+<div class="flex items-center gap-sm mb-sm">
+<span class="material-symbols-outlined text-secondary-fixed">trending_up</span>
+<h4 class="font-label-md font-bold uppercase tracking-widest text-secondary-fixed">Market Insights</h4>
+</div>
+<p class="text-on-primary-container font-body-md mb-md">This property is priced 5% below the neighborhood average for similar specs.</p>
+<div class="space-y-sm border-t border-white/10 pt-md">
+<div class="flex justify-between font-caption">
+<span>Demand in Heights District</span>
+<span class="text-secondary-fixed">High</span>
+</div>
+<div class="flex justify-between font-caption">
+<span>Average Days on Market</span>
+<span>14 Days</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container pt-xl pb-lg border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-md">
+<span class="font-headline-md text-headline-md font-bold text-primary-fixed">HomeHub</span>
+<p class="font-body-md text-on-primary-container opacity-80 leading-relaxed">Defining the next generation of real estate with precision, clarity, and authority.</p>
+</div>
+<div>
+<h5 class="text-white font-label-md font-bold mb-md uppercase tracking-widest">Company</h5>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Our Agents</a></li>
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Office Locations</a></li>
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Newsletter Signup</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-label-md font-bold mb-md uppercase tracking-widest">Support</h5>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-primary-container opacity-80 hover:text-secondary-fixed-dim underline transition-all" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-label-md font-bold mb-md uppercase tracking-widest">Subscribe</h5>
+<div class="flex gap-xs">
+<input class="bg-white/10 border-white/20 rounded-lg px-md h-12 text-white placeholder:text-white/40 focus:ring-secondary-fixed-dim w-full" placeholder="Email address" type="email">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-md rounded-lg font-bold hover:bg-secondary-fixed-dim transition-colors">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg mt-xl pt-lg border-t border-white/10 text-center">
+<p class="font-body-md text-on-primary-container opacity-80">© 2024 HomeHub Real Estate Brokerage. All rights reserved.</p>
+</div>
+</footer>
+<!-- FAB for Quick Actions -->
+<button class="md:hidden fixed bottom-md right-md bg-secondary text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center active:scale-90 transition-transform z-50">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<script>
+        // Simple Interaction logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactBtn = document.querySelector('button.bg-secondary');
+            contactBtn.addEventListener('click', (e) => {
+                if(e.target.innerText === 'Schedule a Tour') {
+                    // Logic for form submission could go here
+                }
+            });
+
+            // Smooth scroll for anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>

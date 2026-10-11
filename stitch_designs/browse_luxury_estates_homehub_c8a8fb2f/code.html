@@ -1,0 +1,578 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css2-485c88d4d23d.png" rel="stylesheet">
+<link href="assets/css2-61246dcc756a.png" rel="stylesheet">
+<link href="assets/css2-a39f5c6fcbb8.png" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "error": "#ffb4ab",
+                "on-background": "#e0e3e5",
+                "on-error": "#690005",
+                "secondary-fixed": "#62fae3",
+                "inverse-on-surface": "#2d3133",
+                "surface": "#101415",
+                "on-secondary-fixed-variant": "#005047",
+                "surface-bright": "#363a3b",
+                "on-tertiary": "#003919",
+                "secondary-fixed-dim": "#3cddc7",
+                "surface-variant": "#323537",
+                "tertiary-fixed": "#6dfe9c",
+                "on-secondary": "#003731",
+                "inverse-primary": "#565e74",
+                "on-primary": "#283044",
+                "on-tertiary-fixed": "#00210c",
+                "primary-fixed": "#dae2fd",
+                "error-container": "#93000a",
+                "secondary": "#44e2cd",
+                "background": "#101415",
+                "tertiary-container": "#001d0a",
+                "surface-tint": "#bec6e0",
+                "surface-container-highest": "#323537",
+                "tertiary-fixed-dim": "#4de082",
+                "on-tertiary-fixed-variant": "#005227",
+                "on-surface-variant": "#c6c6cd",
+                "outline": "#909097",
+                "surface-container-high": "#272a2c",
+                "secondary-container": "#03c6b2",
+                "surface-container-lowest": "#0b0f10",
+                "on-primary-fixed-variant": "#3f465c",
+                "inverse-surface": "#e0e3e5",
+                "surface-dim": "#101415",
+                "on-tertiary-container": "#00954b",
+                "on-secondary-fixed": "#00201c",
+                "on-secondary-container": "#004d44",
+                "primary": "#bec6e0",
+                "on-primary-container": "#798098",
+                "tertiary": "#4de082",
+                "surface-container": "#1d2022",
+                "primary-fixed-dim": "#bec6e0",
+                "outline-variant": "#45464d",
+                "on-surface": "#e0e3e5",
+                "surface-container-low": "#191c1e",
+                "on-primary-fixed": "#131b2e",
+                "on-error-container": "#ffdad6",
+                "primary-container": "#0f172a"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1440px",
+                "margin-desktop": "64px",
+                "margin-mobile": "24px",
+                "section-gap": "128px",
+                "gutter": "32px",
+                "unit": "8px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "display-sm": [
+                        "Playfair Display"
+                ],
+                "body-xl": [
+                        "Montserrat"
+                ],
+                "label-caps": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "38px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "84px",
+                        {
+                                "lineHeight": "92px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-sm": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-xl": [
+                        "20px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .property-card:hover .favorite-btn { opacity: 1; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<!-- Brand -->
+<div class="font-display-sm text-display-sm font-bold text-primary cursor-pointer tracking-tight">
+                HomeHub
+            </div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-md text-body-md transition-colors duration-200 uppercase tracking-widest text-[13px]" href="#">Buy</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 uppercase tracking-widest text-[13px]" href="#">Rent</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 uppercase tracking-widest text-[13px]" href="#">Sell</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md text-body-md transition-colors duration-200 uppercase tracking-widest text-[13px]" href="#">Land</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-unit">
+<div class="relative hidden lg:block">
+<input class="h-10 pl-10 pr-4 rounded-full bg-surface-container/50 border border-outline-variant/30 focus:ring-2 focus:ring-secondary focus:border-transparent outline-none text-body-md text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search City, ZIP..." type="text">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-full font-label-caps text-label-caps active:scale-95 transition-transform uppercase tracking-widest font-bold">
+                    List Property
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32 min-h-screen pb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Breadcrumbs & Utility Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-margin-desktop gap-6 border-b border-outline-variant/20 pb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Properties for Sale in New York</h1>
+<p class="text-on-surface-variant font-body-md tracking-wide">2,458 luxury homes found</p>
+</div>
+<div class="flex items-center gap-unit">
+<div class="flex bg-surface-container-high/50 rounded-full p-1 backdrop-blur-sm border border-outline-variant/20">
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary shadow-sm text-on-secondary font-label-caps tracking-wider" id="view-grid">
+<span class="material-symbols-outlined text-[18px]">grid_view</span> Grid
+                        </button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-on-surface-variant hover:text-primary transition-all font-label-caps tracking-wider" id="view-map">
+<span class="material-symbols-outlined text-[18px]">map</span> Map
+                        </button>
+</div>
+<select class="h-10 px-4 rounded-full bg-surface-container-lowest/50 backdrop-blur-sm border border-outline-variant/30 font-label-caps tracking-wider text-on-surface focus:ring-secondary focus:border-secondary appearance-none outline-none">
+<option>NEWEST FIRST</option>
+<option>PRICE: LOW TO HIGH</option>
+<option>PRICE: HIGH TO LOW</option>
+<option>BEDS: MOST FIRST</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-80 shrink-0">
+<div class="sticky top-32 space-y-6">
+<div class="glass-panel rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-lg text-body-xl tracking-wide">Filters</h3>
+<button class="text-secondary font-label-caps hover:text-secondary-fixed transition-colors">RESET</button>
+</div>
+<!-- Price Range -->
+<div class="mb-6">
+<label class="block font-label-caps text-on-surface-variant mb-3 tracking-widest text-[10px]">PRICE RANGE</label>
+<div class="grid grid-cols-2 gap-2">
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container/30 border border-outline-variant/30 focus:ring-1 focus:ring-secondary focus:border-secondary text-on-surface placeholder:text-on-surface-variant/50 outline-none text-sm" placeholder="Min" type="text">
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container/30 border border-outline-variant/30 focus:ring-1 focus:ring-secondary focus:border-secondary text-on-surface placeholder:text-on-surface-variant/50 outline-none text-sm" placeholder="Max" type="text">
+</div>
+</div>
+<!-- Property Type -->
+<div class="mb-6">
+<label class="block font-label-caps text-on-surface-variant mb-3 tracking-widest text-[10px]">PROPERTY TYPE</label>
+<div class="space-y-1">
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input checked="" class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">House</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Apartment</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Condo</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Townhouse</span>
+</label>
+</div>
+</div>
+<!-- Bedrooms -->
+<div class="mb-8">
+<label class="block font-label-caps text-on-surface-variant mb-3 tracking-widest text-[10px]">BEDROOMS</label>
+<div class="flex gap-1">
+<button class="flex-1 h-10 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high/50 font-label-caps text-[11px] transition-colors">ANY</button>
+<button class="flex-1 h-10 rounded-lg border border-secondary bg-secondary/10 text-secondary font-bold font-label-caps text-[11px] shadow-[0_0_10px_rgba(68,226,205,0.2)]">2+</button>
+<button class="flex-1 h-10 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high/50 font-label-caps text-[11px] transition-colors">3+</button>
+<button class="flex-1 h-10 rounded-lg border border-outline-variant/30 hover:bg-surface-container-high/50 font-label-caps text-[11px] transition-colors">4+</button>
+</div>
+</div>
+<!-- Amenities -->
+<div class="mb-8">
+<label class="block font-label-caps text-on-surface-variant mb-3 tracking-widest text-[10px]">AMENITIES</label>
+<div class="space-y-1">
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Pool</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Parking</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Gym</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer hover:bg-surface-container-low/50 p-2 rounded-lg transition-colors group">
+<div class="relative flex items-center justify-center w-5 h-5">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-transparent checked:bg-secondary checked:border-secondary transition-all outline-none" type="checkbox">
+<span class="material-symbols-outlined absolute text-[16px] text-on-secondary opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<span class="text-body-md group-hover:text-primary transition-colors">Pet Friendly</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-4 rounded-full font-label-caps tracking-widest hover:bg-secondary-fixed transition-colors uppercase font-bold shadow-[0_0_15px_rgba(68,226,205,0.3)] hover:shadow-[0_0_25px_rgba(68,226,205,0.5)]">
+                                Apply Filters
+                            </button>
+</div>
+<!-- Newsletter Promo -->
+<div class="glass-panel rounded-xl p-6 relative overflow-hidden group border-secondary/20">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-50"></div>
+<div class="relative z-10">
+<h4 class="font-headline-lg text-body-xl mb-2">Don't miss a listing</h4>
+<p class="text-on-surface-variant text-sm mb-6 font-body-md">Get instant alerts for homes in New York city.</p>
+<input class="w-full h-10 px-4 mb-3 rounded-lg bg-surface/50 border border-outline-variant/30 text-on-surface placeholder-on-surface-variant/50 outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-sm" placeholder="Your email" type="email">
+<button class="w-full bg-surface-container-high/50 text-secondary border border-secondary/50 py-3 rounded-lg font-label-caps hover:bg-secondary/10 transition-colors uppercase tracking-widest">Subscribe</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 text-secondary">
+<span class="material-symbols-outlined text-[120px]" data-weight="fill">notifications_active</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Property Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Property Card 1 -->
+<div class="property-card glass-panel rounded-xl overflow-hidden group hover:border-secondary/30 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(68,226,205,0.1)]">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Luxury Modern Villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A luxurious modern villa featuring clean architectural lines, large floor-to-ceiling glass windows, and a pristine infinity pool in the foreground. The scene is captured during the golden hour, casting a warm, premium glow over the white limestone exterior and the lush, manicured garden. The overall aesthetic is professional and high-end, representing prime real estate." src="assets/AB6AXuCdKh6N8bwXjxbHFUTtAElUuasGrq5TeZ7jhWSILD3RX9Pg5aLRlaog2g1MtqlL1zy6NmdCMG-feGoSRrP2JkHYFe0TaxmY-908192084d1e.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary text-on-secondary px-3 py-1.5 rounded-md text-[10px] font-label-caps tracking-widest uppercase shadow-[0_0_10px_rgba(68,226,205,0.4)]">New Construction</span>
+</div>
+<button class="favorite-btn absolute top-4 right-4 w-10 h-10 bg-surface/30 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white md:opacity-0 transition-all duration-300 hover:bg-surface/60 hover:text-secondary hover:border-secondary/50">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-headline-lg text-headline-lg-mobile text-primary tracking-tight mb-1">$4,250,000</p>
+<p class="text-on-surface-variant font-body-md text-sm uppercase tracking-wide">128 Central Park S, New York, NY</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/20 pt-5">
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bed</span>
+<span class="font-body-md text-sm">4 Beds</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bathtub</span>
+<span class="font-body-md text-sm">3.5 Baths</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">square_foot</span>
+<span class="font-body-md text-sm">3,450 sqft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="property-card glass-panel rounded-xl overflow-hidden group hover:border-secondary/30 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(68,226,205,0.1)]">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Coastal Retreat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An expansive coastal retreat house with multiple white balconies overlooking a calm turquoise ocean. The photography style is bright and airy, with soft natural light highlighting the elegant white architecture and a few palm trees framing the scene. The atmosphere is serene and ultra-luxurious, typical of a high-end seaside estate." src="assets/AB6AXuA-nDkYsq_ph3rxv4EADFBdG3Hr6Jix-nJCzvwskxhkmpu6tGkgxgSJPsXzUXrm5WRy--oESYz9C3cv_2zf2FCAEt6IYHDS-2e872815fe00.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-variant text-on-surface px-3 py-1.5 rounded-md text-[10px] font-label-caps tracking-widest uppercase border border-outline-variant/30 backdrop-blur-md">Price Reduced</span>
+</div>
+<button class="favorite-btn absolute top-4 right-4 w-10 h-10 bg-surface/30 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white md:opacity-0 transition-all duration-300 hover:bg-surface/60 hover:text-secondary hover:border-secondary/50">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-headline-lg text-headline-lg-mobile text-primary tracking-tight mb-1">$2,890,000</p>
+<p class="text-on-surface-variant font-body-md text-sm uppercase tracking-wide">45 Ocean Breeze Ave, Montauk, NY</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/20 pt-5">
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bed</span>
+<span class="font-body-md text-sm">5 Beds</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bathtub</span>
+<span class="font-body-md text-sm">4 Baths</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">square_foot</span>
+<span class="font-body-md text-sm">4,200 sqft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="property-card glass-panel rounded-xl overflow-hidden group hover:border-secondary/30 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(68,226,205,0.1)]">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Sleek Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sleek penthouse interior featuring a minimalist open-plan living room with polished concrete floors and dark charcoal accents. Massive windows offer a dramatic view of a city skyline at dusk with glowing city lights. The design is contemporary and professional, with high-end designer furniture and warm ambient lighting from recessed ceiling fixtures." src="assets/AB6AXuAiVLgd1oPbGh9naD7TmHDGamdABVFIDhgI48cHhf621JT-3NzIissvfBlBYpaFbA9e5hU_1I_XLGPcuQxtjtOKdy3pVZfb-fb9f9e643846.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary text-on-secondary px-3 py-1.5 rounded-md text-[10px] font-label-caps tracking-widest uppercase shadow-[0_0_10px_rgba(68,226,205,0.4)]">Open House</span>
+</div>
+<button class="favorite-btn absolute top-4 right-4 w-10 h-10 bg-surface/30 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white md:opacity-0 transition-all duration-300 hover:bg-surface/60 hover:text-secondary hover:border-secondary/50">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-headline-lg text-headline-lg-mobile text-primary tracking-tight mb-1">$7,500,000</p>
+<p class="text-on-surface-variant font-body-md text-sm uppercase tracking-wide">777 Park Avenue, New York, NY</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/20 pt-5">
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bed</span>
+<span class="font-body-md text-sm">3 Beds</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bathtub</span>
+<span class="font-body-md text-sm">3 Baths</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">square_foot</span>
+<span class="font-body-md text-sm">2,800 sqft</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="property-card glass-panel rounded-xl overflow-hidden group hover:border-secondary/30 transition-all duration-500 hover:shadow-[0_8px_32px_rgba(68,226,205,0.1)]">
+<div class="relative aspect-[4/3] overflow-hidden">
+<img alt="Brick Manor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A classic red brick manor house surrounded by mature oak trees and a perfectly landscaped lawn. The afternoon sun creates sharp, clean shadows across the facade. The visual style is traditional yet polished, emphasizing stability and prestige. The palette is dominated by rich brick reds, deep greens, and clear blue skies." src="assets/AB6AXuCs_XD4-WDHjwH31uLY_EnsFH_mw2y169PxcHM237o3jr_l0s-Eydot_9zV6gc1tRWm6MT0fg0MJa44MTvP65EuSkKrfnRV-cb3d96234443.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+<button class="favorite-btn absolute top-4 right-4 w-10 h-10 bg-surface/30 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white md:opacity-0 transition-all duration-300 hover:bg-surface/60 hover:text-secondary hover:border-secondary/50">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-6 relative">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-headline-lg text-headline-lg-mobile text-primary tracking-tight mb-1">$1,950,000</p>
+<p class="text-on-surface-variant font-body-md text-sm uppercase tracking-wide">212 Sycamore Ln, Scarsdale, NY</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-outline-variant/20 pt-5">
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bed</span>
+<span class="font-body-md text-sm">6 Beds</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">bathtub</span>
+<span class="font-body-md text-sm">5.5 Baths</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px] font-light">square_foot</span>
+<span class="font-body-md text-sm">5,100 sqft</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high/50 hover:text-secondary transition-colors glass-panel">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-caps font-bold shadow-[0_0_15px_rgba(68,226,205,0.3)]">1</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high/50 hover:text-secondary transition-colors font-label-caps glass-panel">2</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high/50 hover:text-secondary transition-colors font-label-caps glass-panel">3</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-surface-container-high/50 hover:text-secondary transition-colors glass-panel">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-on-surface w-full pt-20 pb-10 border-t border-outline-variant/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent opacity-50"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter relative z-10">
+<!-- Footer Brand -->
+<div class="space-y-6">
+<div class="font-display-sm text-[32px] font-bold text-primary tracking-tight">HomeHub</div>
+<p class="text-body-md text-on-surface-variant max-w-xs leading-relaxed">Connecting discerning buyers with the world's most exceptional properties. Excellence in real estate services since 1998.</p>
+</div>
+<!-- Quick Links -->
+<div>
+<h5 class="text-secondary font-bold mb-6 uppercase tracking-widest text-label-caps">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Office Locations</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Agents</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Newsletter Signup</a></li>
+</ul>
+</div>
+<!-- Legal -->
+<div>
+<h5 class="text-secondary font-bold mb-6 uppercase tracking-widest text-label-caps">Support</h5>
+<ul class="space-y-4">
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Social/Copyright -->
+<div class="flex flex-col justify-between">
+<div>
+<h5 class="text-secondary font-bold mb-6 uppercase tracking-widest text-label-caps">Follow Us</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">chat_bubble</span></a>
+<a class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-secondary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a>
+</div>
+</div>
+<p class="text-[11px] text-on-surface-variant font-label-caps tracking-widest uppercase mt-12">© 2024 HomeHub Real Estate.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic
+        const viewGridBtn = document.getElementById('view-grid');
+        const viewMapBtn = document.getElementById('view-map');
+
+        viewGridBtn.addEventListener('click', () => {
+            viewGridBtn.classList.add('bg-secondary', 'text-on-secondary');
+            viewGridBtn.classList.remove('text-on-surface-variant', 'hover:text-primary');
+            viewMapBtn.classList.remove('bg-secondary', 'text-on-secondary');
+            viewMapBtn.classList.add('text-on-surface-variant', 'hover:text-primary');
+        });
+
+        viewMapBtn.addEventListener('click', () => {
+            viewMapBtn.classList.add('bg-secondary', 'text-on-secondary');
+            viewMapBtn.classList.remove('text-on-surface-variant', 'hover:text-primary');
+            viewGridBtn.classList.remove('bg-secondary', 'text-on-secondary');
+            viewGridBtn.classList.add('text-on-surface-variant', 'hover:text-primary');
+        });
+
+        // Favorite Toggle
+        document.querySelectorAll('.favorite-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const icon = btn.querySelector('.material-symbols-outlined');
+                const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+                icon.style.fontVariationSettings = isFilled ? "'FILL' 0" : "'FILL' 1";
+                if (!isFilled) {
+                    btn.classList.add('text-secondary', 'border-secondary', 'opacity-100');
+                    btn.classList.remove('bg-surface/30', 'border-white/10');
+                    btn.classList.add('bg-surface/80', 'shadow-[0_0_15px_rgba(68,226,205,0.4)]');
+                } else {
+                    btn.classList.remove('text-secondary', 'border-secondary', 'bg-surface/80', 'shadow-[0_0_15px_rgba(68,226,205,0.4)]');
+                    btn.classList.add('bg-surface/30', 'border-white/10');
+                }
+            });
+        });
+    </script>
+</body></html>

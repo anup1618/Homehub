@@ -1,0 +1,28 @@
+{
+  "name": "homehub",
+  "version": "1.0.0",
+  "description": "HomeHub Real Estate Marketplace Web Application",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "download": "node download_stitch.mjs",
+    "server": "node server.js",
+    "dev:all": "start npm run server && start npm run dev"
+  },
+  "dependencies": {
+    "@google/stitch-sdk": "^0.3.5",
+    "@supabase/supabase-js": "^2.117.3",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.6",
+    "dompurify": "^3.4.16",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "three": "^0.185.1",
+    "vite": "^8.2.1"
+  }
+}
